@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1777607941051,
+    "nama": "Murbuild",
+    "harga": 15000,
+    "stok": [
+      "https://t.me/prvalbybot"
+    ],
+    "createdAt": "2026-05-01T03:59:01.051Z"
+  },
+  {
+    "id": 1777609593325,
+    "nama": "AdminPanel",
+    "harga": 15000,
+    "stok": [],
+    "createdAt": "2026-05-01T04:26:33.325Z"
+  }
+]

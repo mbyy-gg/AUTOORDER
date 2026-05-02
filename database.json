@@ -1,0 +1,61 @@
+{
+  "isPanelOpen": true,
+  "paymentMethod": "pakasir",
+  "integrations": {
+    "digitalOcean": {
+      "token": "dop_v1_ab3785d6d41a3ca0b07b5b59b6e18183c7744f43847c64b77be1506d41e54f4f"
+    },
+    "panel": {
+      "domain": "https://albyytzy.xwarcloud.my.id",
+      "apikey": "ptla_6sVQBTo3JEuPhKBguQm0yYAVD13LBd8CkHHG0iZ8amF"
+    }
+  },
+  "scripts": [
+    {
+      "nama": "SC AUTO ORDER YG GW PAKE",
+      "harga": 30000,
+      "deskripsi": "FULL UP",
+      "file_id": "BQACAgUAAxkBAAECHplpjI0EqBiJ5oxNKj0V_bdxfpHdsAAC3RwAAo-BYFQnmb1-cL9-8zoE",
+      "fileName": "NEW_UP_NIH_GUYS.zip"
+    },
+    {
+      "nama": "Web2Apk Bot Gen 3",
+      "harga": 15000,
+      "deskripsi": "Script Builder real app",
+      "file_id": "BQACAgUAAxkBAANUafQiPWwfbl_0QsV-2O81gwEqZm4AAs4gAALgsqFXiSmk0WQmVcU7BA",
+      "fileName": "Web2Apk.zip"
+    }
+  ],
+  "users": {
+    "8233011887": {
+      "coin": 0,
+      "joined": true,
+      "refBy": null,
+      "refCount": 0
+    },
+    "5676072619": {
+      "coin": 0,
+      "joined": true,
+      "refBy": null,
+      "refCount": 0
+    },
+    "8035198336": {
+      "coin": 0,
+      "joined": true,
+      "refBy": null,
+      "refCount": 0
+    },
+    "7813736529": {
+      "coin": 0,
+      "joined": true,
+      "refBy": null,
+      "refCount": 0
+    },
+    "8669857068": {
+      "coin": 0,
+      "joined": true,
+      "refBy": null,
+      "refCount": 0
+    }
+  }
+}
