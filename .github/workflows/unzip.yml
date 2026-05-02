@@ -1,0 +1,64 @@
+name: Extract and Rename
+
+on:
+  push:
+    paths:
+      - '**.zip'
+  workflow_dispatch:
+
+jobs:
+  unzip-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Install unzip
+        run: sudo apt-get update && sudo apt-get install -y unzip
+
+      - name: 🗜️ Process all zip files
+        run: |
+          # Loop melalui semua file .zip di root directory
+          for zip_file in *.zip; do
+            # Cek jika file zip benar-benar ada (loop aman jika tidak ada file)
+            if [[ -f "$zip_file" ]]; then
+              echo "📁 Processing: $zip_file"
+              
+              # 1. Ekstrak file zip ke folder sementara
+              temp_dir="temp_$(date +%s)"
+              mkdir -p "$temp_dir"
+              unzip -q "$zip_file" -d "$temp_dir"
+              
+              # 2. Hapus file zip asli
+              rm "$zip_file"
+              
+              # 3. Pindahkan semua isi folder sementara ke root repo (timpa jika ada)
+              # Gunakan loop untuk menangani file dan folder termasuk yang tersembunyi
+              shopt -s dotglob
+              for item in "$temp_dir"/*; do
+                if [[ -e "$item" ]]; then
+                  mv -f "$item" ./
+                fi
+              done
+              shopt -u dotglob
+              
+              # 4. Hapus folder sementara
+              rm -rf "$temp_dir"
+              echo "✅ Done: $zip_file"
+            fi
+          done
+
+      - name: 💾 Commit & push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-process: extract and remove zip files"
+            git push
+          fi
